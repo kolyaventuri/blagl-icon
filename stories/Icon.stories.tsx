@@ -7,9 +7,9 @@ export default {
   component: Icon,
 } as Meta;
 
-const IconStory = ({size = 96}: IconProps) => <Icon size={size}/>;
+const IconStory = ({size = 48}: IconProps) => <Icon size={size}/>;
 
 export const Primary = IconStory.bind({});
 Primary.args = {
-  size: 96
+  size: 48
 };
