@@ -28,7 +28,6 @@
     "test/**/*"
   ],
   "include": [
-    "next-env.d.ts",
     "src/**/*"
   ]
 }

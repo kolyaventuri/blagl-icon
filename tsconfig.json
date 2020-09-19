@@ -24,10 +24,11 @@
     "module": "esnext"
   },
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "stories/**/*"
   ],
   "include": [
     "test",
-    "src"
+    "src", 
   ]
 }
