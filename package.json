@@ -1,0 +1,147 @@
+{
+  "name": "blagl-icon",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm-run-all lint:* test:*",
+    "test:unit": "cross-env TS_NODE_PROJECT=tsconfig.ava.json ava",
+    "lint:tsc": "tsc --noEmit",
+    "lint:lint": "xo --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kolyaventuri/blagl-icon.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kolyaventuri/blagl-icon/issues"
+  },
+  "homepage": "https://github.com/kolyaventuri/blagl-icon#readme",
+  "devDependencies": {
+    "@ava/babel": "^1.0.1",
+    "@types/react": "^16.9.49",
+    "@types/sinon": "^9.0.5",
+    "@typescript-eslint/eslint-plugin": "^4.1.1",
+    "@typescript-eslint/parser": "^4.1.1",
+    "ava": "^3.12.1",
+    "cross-env": "^7.0.2",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.4",
+    "eslint": "^7.9.0",
+    "eslint-config-xo": "^0.32.1",
+    "eslint-config-xo-react": "^0.23.0",
+    "eslint-config-xo-typescript": "^0.32.0",
+    "eslint-plugin-react": "^7.20.6",
+    "eslint-plugin-react-hooks": "^4.1.2",
+    "esm": "^3.2.25",
+    "husky": "^4.3.0",
+    "ignore-styles": "^5.0.1",
+    "lint-staged": "^10.4.0",
+    "node-sass": "^4.14.1",
+    "npm-run-all": "^4.1.5",
+    "proxyquire": "^2.1.3",
+    "sinon": "^9.0.3",
+    "ts-node": "^9.0.0",
+    "tsconfig-paths": "^3.9.0",
+    "typescript": "^4.0.3",
+    "xo": "^0.33.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm-run-all lint:* && lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*": [
+      "xo --fix"
+    ]
+  },
+  "xo": {
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "project": [
+        "./tsconfig.json"
+      ]
+    },
+    "extends": [
+      "xo-typescript",
+      "plugin:@typescript-eslint/recommended",
+      "xo-react/space"
+    ],
+    "extensions": [
+      "ts"
+    ],
+    "space": true,
+    "prettier": true,
+    "compilerOptions": {
+      "strict": true
+    },
+    "rules": {
+      "@typescript-eslint/camelcase": 0,
+      "indent": 0,
+      "@typescript-eslint/indent": [
+        "error",
+        2
+      ],
+      "@typescript-eslint/no-explicit-any": 0,
+      "@typescript-eslint/no-unused-vars": [
+        "error"
+      ],
+      "@typescript-eslint/prefer-readonly-parameter-types": 0
+    },
+    "overrides": [
+      {
+        "files": "test/**/*.ts?(x)",
+        "rules": {
+          "@typescript-eslint/explicit-function-return-type": 0,
+          "@typescript-eslint/prefer-readonly-parameter-types": 0,
+          "@typescript-eslint/no-unsafe-call": 0
+        }
+      },
+      {
+        "files": "**/*.ts?(x)",
+        "rules": {
+          "import/no-unassigned-import": 0
+        }
+      }
+    ],
+    "settings": {
+      "react": {
+        "version": "16.5"
+      }
+    },
+    "env": [
+      "node"
+    ],
+    "include": [
+      "**/*.ts?(x)"
+    ],
+    "ignore": [
+      "**/*.js"
+    ]
+  },
+  "ava": {
+    "babel": {
+      "compileEnhancements": false,
+      "compileAsTests": [
+        "test/helpers/**/*.ts"
+      ]
+    },
+    "extensions": [
+      "ts",
+      "tsx"
+    ],
+    "files": [
+      "test/**/*.test.ts(x)?"
+    ],
+    "require": [
+      "ignore-styles",
+      "esm",
+      "ts-node/register",
+      "tsconfig-paths/register",
+      "./test/helpers/setup-enzyme.ts"
+    ]
+  }
+}
