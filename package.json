@@ -1,9 +1,11 @@
 {
   "name": "@kolyaventuri/blagl-icon",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "lib/index.js",
-  "publishConfig": { "registry": "https://npm.pkg.github.com/" },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "scripts": {
     "prepublish": "npm-run-all build:*",
     "test": "npm-run-all lint:* test:*",
