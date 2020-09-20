@@ -7,9 +7,15 @@ export default {
   component: Icon,
 } as Meta;
 
-const IconStory = ({size = 48}: IconProps) => <Icon size={size}/>;
+const IconStory = ({size = 48, type = 'simple'}: IconProps) => <Icon size={size} type={type}/>;
 
-export const Primary = IconStory.bind({});
-Primary.args = {
+export const Simple = IconStory.bind({});
+Simple.args = {
   size: 48
+};
+
+export const Expanding = IconStory.bind({});
+Expanding.args = {
+  size: 48,
+  type: 'expanding'
 };
