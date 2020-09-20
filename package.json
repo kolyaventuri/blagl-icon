@@ -1,16 +1,20 @@
 {
   "name": "@kolyaventuri/blagl-icon",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
-  "main": "index.js",
-  "publishConfig": { "registry": "https://npm.pkg.github.com/" },
+  "main": "lib/index.js",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "scripts": {
+    "prepublish": "npm-run-all build:*",
     "test": "npm-run-all lint:* test:*",
     "test:unit": "cross-env TS_NODE_PROJECT=tsconfig.ava.json ava",
     "lint:tsc": "tsc --noEmit",
     "lint:lint": "xo --fix",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "build:package": "tsc -p tsconfig.build.json"
   },
   "repository": {
     "type": "git",
