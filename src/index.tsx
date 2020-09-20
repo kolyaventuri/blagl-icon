@@ -77,4 +77,6 @@ const Icon = ({
   );
 };
 
+Icon.name = 'BlaglIcon';
+
 export default Icon;
