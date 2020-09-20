@@ -7,14 +7,14 @@
     "registry": "https://npm.pkg.github.com/"
   },
   "scripts": {
-    "prepublish": "npm-run-all build:*",
+    "prepublish": "npm-run-all build",
     "test": "npm-run-all lint:* test:*",
     "test:unit": "cross-env TS_NODE_PROJECT=tsconfig.ava.json ava",
     "lint:tsc": "tsc --noEmit",
     "lint:lint": "xo --fix",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "build:package": "tsc -p tsconfig.build.json"
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
@@ -60,9 +60,12 @@
     "react-is": "^16.13.1",
     "sinon": "^9.0.3",
     "storybook": "^6.0.21",
+    "ts-loader": "^8.0.4",
     "ts-node": "^9.0.0",
     "tsconfig-paths": "^3.9.0",
     "typescript": "^4.0.3",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12",
     "xo": "^0.33.1"
   },
   "husky": {
