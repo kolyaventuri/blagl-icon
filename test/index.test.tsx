@@ -110,3 +110,14 @@ test('with expanding style, reverses animation and then stops', async (t) => {
   t.true(animation.setDirection.calledWith(-1));
   t.true(animation.play.called);
 });
+
+test('calls onClick when clicked', (t) => {
+  const {Icon} = getFn();
+
+  const onClick = stub();
+  const tree = shallow(<Icon size={96} onClick={onClick} />);
+  const div = tree.find('div');
+  div.simulate('click');
+
+  t.true(onClick.called);
+});
