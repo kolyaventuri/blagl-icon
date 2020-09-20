@@ -9,19 +9,15 @@ const config = {
   },
   entry: './src/index.tsx',
   externals: {
-    react: {
-      commonjs: 'react',
-      commonjs2: 'react',
-      amd: 'react',
-      root: 'React'
-    }
+    react: 'commonjs react'
   },
   output: {
-    path: path.join(__dirname, './lib'), 
+    path: path.join(__dirname, '../lib'), 
     filename: 'index.js',
     library: 'BlaglIcon',
-    libraryTarget: 'umd',
+    libraryTarget: 'commonjs2',
     publicPath: '/lib/',
+    globalObject: 'this'
   },
   resolve: {
     extensions: ['.ts', '.tsx']
