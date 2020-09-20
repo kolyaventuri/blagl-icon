@@ -6,9 +6,17 @@ import expanding from './icons/expanding.json';
 export type IconProps = {
   readonly size: number;
   readonly type?: 'simple' | 'expanding';
+  readonly onClick?: () => void;
 };
 
-const Icon = ({size = 48, type = 'simple'}: IconProps): JSX.Element => {
+// eslint-disable-next-line @typescript-eslint/no-empty-function
+const noop = () => {};
+
+const Icon = ({
+  size = 48,
+  type = 'simple',
+  onClick = noop
+}: IconProps): JSX.Element => {
   const ref = useRef<null | HTMLDivElement>(null);
   const [anim, setAnim] = useState<null | AnimationItem>(null);
   const [ready, setReady] = useState(false);
@@ -64,6 +72,7 @@ const Icon = ({size = 48, type = 'simple'}: IconProps): JSX.Element => {
       }}
       onMouseOver={handleMouseOver}
       onMouseOut={handleMouseOut}
+      onClick={onClick}
     />
   );
 };
