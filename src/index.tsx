@@ -12,7 +12,7 @@ export type IconProps = {
 // eslint-disable-next-line @typescript-eslint/no-empty-function
 const noop = () => {};
 
-const Icon = ({
+const BlaglIcon = ({
   size = 48,
   type = 'simple',
   onClick = noop
@@ -77,6 +77,4 @@ const Icon = ({
   );
 };
 
-Icon.name = 'BlaglIcon';
-
-export default Icon;
+export default BlaglIcon;
